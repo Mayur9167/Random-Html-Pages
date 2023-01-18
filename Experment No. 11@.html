@@ -1,0 +1,100 @@
+<html>
+<script language = "javascript">
+functionatbeg()
+{
+var n, len;
+n = f1.t1.value;
+len=n.length-1;
+if((n.indexOf('@')==0)||(n.indexOf('@')==len))
+{
+f1.t1.value="";
+f1.t1.focus();
+return false;
+}
+return true;
+}
+
+function at()
+{
+varn,i,ch,cnt=0;
+n = f1.t1.value;
+for(i=0;i<n.length;i++)
+{
+ch=n.charAt(i);
+if(ch=="@")
+{
+cnt=cnt+1;
+if(cnt>1)
+{
+f1.t1.value="";
+f1.t1.focus();
+return false;
+break;
+}
+}
+}
+return true;
+}
+
+functiondotbeg()
+{
+var n, len;
+n = f1.t1.value;
+len = n.length-1;
+if((n.indexOf('.')==0)||(n.indexOf('.')==len))
+{
+f1.t1.value="";
+f1.t1.focus();
+return false;
+}
+return true;
+}
+
+function dot()
+{
+var,at,dot,lat,lid;
+n = f1.t1.value;
+at ="@";
+dot =".";
+lat = n.indexOf(at);
+lid = n.length;
+if(n.indexOf(dot,(lat+2))==-1)
+{
+f1.t1.value="";
+f1.t1.focus();
+return false;
+}
+return true;
+}
+
+functionchk()
+{
+if(! atbeg())
+alert("@ character should not be at the begining or at the end");
+else
+{
+if(!at())
+alert("@character should be only once");
+else
+{
+if(! dotbeg())
+alert("Dot character should not be at the begning or at the end");
+else
+if(!dot())
+alert("Dot and @ character should come atleast once and dot should not be before or after @");
+{
+alert("Valid Email address");
+}
+}
+}
+}
+</script>
+<body>
+<h1><center>validation of E-mail Address</center></h1>
+<form name = "f1">
+Enter the Email address
+<input type="text" name="t1">
+<input type = "button" name ="b1" value = "click" onClick = "chk()">
+</form>
+</body>
+</html>

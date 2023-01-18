@@ -1,0 +1,101 @@
+<html>
+<script language = "javascript">
+
+function minuser()
+{
+var user;
+user=f1.t1.value;
+if(user.length<6)
+{
+f1.t1.value=" ";
+f1.t1.focus();
+return false;
+}
+return true;
+}
+
+function minpas()
+{
+var pas;
+pas=f1.t2.value;
+if(pas.length<6)
+{
+f1.t2.value=" ";
+f1.t2.focus();
+return false;
+}
+return true;
+}
+
+function user()
+{
+var user,i,ch;
+user=f1.t1.value;
+for(i=0;i<user.length;i++)
+{
+ch=user.charAt(i);
+if(!(ch>='a' && ch<='z')||(ch>'A' && ch<='Z')||(ch>='0' && ch<='9'))
+{
+f1.t1.value=" ";
+f1.t1.focus();
+return false;
+break;
+}
+}
+return true;
+}
+
+function pas()
+{
+var pas,i,ch;
+pas=f1.t2.value;
+for(i=0;i<pas.length;i++)
+{
+ch=pas.charAt(i);
+if(ch==" ")
+{
+f1.t2.value=" ";
+f1.t2.focus();
+return false;
+break;
+}
+}
+return true;
+}
+
+function uncheck()
+{
+if(! minuser())
+alert("User name must be more than 6 characters");
+else
+{
+if(! minpas())
+alert("Password must be more than 6 characters");
+else
+{
+if(! user())
+alert("User name consists only uppercase,lower case, alphabets or digits");
+else
+if (! pas())
+alert("Password cannot contain blank space charactes");
+else
+{
+alert("Valid User");
+}
+}
+}
+}
+
+</script>
+<body>
+<h1><center>Validation of Username and Password</center>
+</h1>
+<form name = "f1">
+Enter The Username
+<input type="text" name="t1" maxlength="12"><p>
+Enter the Password
+<input type="Password" name="t2" maxlength="12"><p>
+<input type="button" name="b1" value="validate" onClick="uncheck()">
+</form>
+</body>
+</html>

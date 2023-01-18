@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>
+<on click event
+</title>
+<script language=javascript>
+function red()
+{
+document.bgColor="red";
+window.setTimeout("yellow()",1000);
+}
+function yellow()
+{
+document.bgColor="yellow";
+window.setTimeout("blue()",1000);
+}
+function blue()
+{
+document.bgColor="blue";
+window.setTimeout("pink()",1000);
+}
+function pink()
+{
+document.bgColor="pink";
+window.setTimeout("purple()",1000);
+}
+function purple()
+{
+document.bgColor="purple";
+window.setTimeout("grey()",1000);
+}
+function grey()
+{
+document.bgColor="grey";
+window.setTimeout("orange()",1000);
+}
+function orange()
+{
+document.bgColor="orange";
+window.setTimeout("green()",1000);
+}
+function green()
+{
+document.bgColor="green";
+window.setTimeout("red()",1000);
+}
+function msg()
+{
+window.status="display of seven Distinct colour";
+}
+</script>
+</head>
+<h1>Place the mouse over the button to change the color</h1>
+<form>
+<input type=button value="colours" name=b1 onmouseover="red()">
+<input type=button value=Message name=b2 onclick="msg()">
+</form>
+</body>
+</html>
+
